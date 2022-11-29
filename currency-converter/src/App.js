@@ -1,27 +1,20 @@
-import { useState} from 'react';
-// import Axios from 'axios';
+// import {useEffect, useState} from 'react';
+import Axios from 'axios';
 import './App.css';
 import ReactDropdown from 'react-dropdown';
 
 function App() {
 
-  //  // Initializing all the state variables 
-  //  const [info, setInfo] = useState([]);
-  //  const [input, setInput] = useState(0);
-   const [sourceCurrency, setSourceCurrency] = useState("");
-   const [destinationCurrency, setdestinationCurrency] = useState("");
-   const [options] = useState([]);
-  //  const [output, setOutput] = useState(0);
+  // const [source, setSource] = useState (" ");
+  // const [currOptions, setCurrOptions] = useState (" ");
+  // const [data, setData] = useState ("");
 
-  //  // Calling the api to fetch source currency
-  // useEffect(()=> {
-  //   Axios.get(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${sourceCurrency}.json`)
-  //     .then((res) => { 
-  //       setInfo(res.data[sourceCurrency]);
-  //       console.log(res.data)
-  //     })
-     
-  // }, [sourceCurrency]);
+   // Calling the api to fetch source currency
+  const getData = async () =>{
+    const info = await Axios.get(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json`);
+    console.log(info.data)
+  };
+  getData();
 
 
 
@@ -40,16 +33,20 @@ function App() {
 
         <div  className='Dropdown outline outline-2 rounded '>
           <h4>From:</h4>
-          <ReactDropdown options={options}
-                        onChange = { (e) => setSourceCurrency(e.value)}
-                        value={sourceCurrency}  />
+          <ReactDropdown 
+          // options={options}
+                        // onChange = { (e) => setSource(e.value)}
+                        // value={source} 
+                         />
         </div>
 
         <div className='Dropdown outline outline-2 rounded'>
           <h4>To:</h4>
-          <ReactDropdown options={options}
-                        onChange = {(e) => {setdestinationCurrency(e.value)}}
-                        value={destinationCurrency}/>
+          <ReactDropdown
+          //  options={options}
+                        // onChange = {(e) => {setdestinationCurrency(e.value)}}
+                        // value={destinationCurrency}
+                        />
         </div>
       </div>
       
