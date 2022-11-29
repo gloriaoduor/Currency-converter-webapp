@@ -1,4 +1,14 @@
 ## Currency Converter
 ### Description 
 
-A small project that uses React for front end and Ruby on Rails for backend while utilising a free API for the conversion rates of global currencies 
+A React Application for currency conversion 
+API used is [Free Currency Rates API](https://github.com/fawazahmed0/currency-api#readme)
+### Aim 
+The goal of this project is to 
+    * learn how to write test cases and run them 
+    * host the project on a cloud platform 
+    * Learn Tailwind CSS
+
+### Tech:
+- React
+- Tailwind 
