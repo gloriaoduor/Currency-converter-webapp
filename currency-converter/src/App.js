@@ -29,7 +29,7 @@ function App() {
 
   return (
    <div className='App pt-32'>
-    <div className='Container bg-sky-100 border-4 rounded-md'>
+    <div className='Container bg-sky-100 border-4 rounded-md p-6'>
     <div className='Heading '>
       <h1 className='font-mono text-7xl bg-sky-200 p-3'>Currency Converter</h1>
     </div>
@@ -52,10 +52,10 @@ function App() {
         </div>
       </div>
       
-      <div className='Fields grid grid-cols-2' id='big-div'>
+      <div className='Fields' id='big-div'>
         <div className='Sourcefield'>
           <h3>Amount:</h3>
-          <input type='text' className='outline outline-2 rounded px-4 '
+          <input type='text' className='Box outline outline-2 rounded px-4  '
                 placeholder='Amount to convert'/>
         </div>
         

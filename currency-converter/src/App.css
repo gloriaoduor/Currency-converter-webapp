@@ -59,6 +59,9 @@
 .Destinationfield h3{
   padding: 10px;
 }
+.Box{
+  width: 342px;
+}
 
 #big-div{
   display: flex;
