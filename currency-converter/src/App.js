@@ -31,10 +31,11 @@ function App() {
    <div className='App pt-32'>
     <div className='Container bg-sky-100 border-4 rounded-md p-6'>
     <div className='Heading '>
-      <h1 className='font-mono text-7xl bg-sky-200 p-3'>Currency Converter</h1>
+      <h1 className='font-mono text-7xl p-3 m-2'>Currency Unit Converter</h1>
     </div>
 
     <div className='Body'>
+      <div className='Main'>
       <div className='Options grid grid-cols-2 gap-4'>
 
         <div  className='Dropdown outline outline-2 rounded '>
@@ -52,10 +53,10 @@ function App() {
         </div>
       </div>
       
-      <div className='Fields' id='big-div'>
+      <div className='Fields' id='fields'>
         <div className='Sourcefield'>
           <h3>Amount:</h3>
-          <input type='text' className='Box outline outline-2 rounded px-4  '
+          <input type='text' className='TextBox outline outline-2 rounded px-4  '
                 placeholder='Amount to convert'/>
         </div>
         
@@ -63,9 +64,10 @@ function App() {
           <h3>Converted Amount: </h3>
           <p> xxxxx </p>
         </div>
-      </div>
-      <button className='Button p-2 rounded bg-orange-200 hover:bg-orange-400 outline outline-2 outline-orange-300'> Convert</button>
+        <button className='Button p-2 mt-4 rounded bg-orange-200 hover:bg-orange-400 outline outline-2 outline-orange-300'> Convert</button>
 
+      </div>
+      </div>
 
     </div>
     </div>

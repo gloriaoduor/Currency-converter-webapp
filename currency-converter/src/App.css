@@ -15,14 +15,12 @@
   width: auto;
   align-items: center;
 }
-.Body {
+
+.Main {
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
 }
-.App-link {
-  color: #61dafb;
-}
+
 .Options{
   height: 100px;
   width: 800px;
@@ -33,15 +31,15 @@
 .Dropdown{
   display: flex;
   align-items: center;
-  padding-right: 5%;
-  margin-right: 5%;
+  padding-right: 2.6rem;
+  margin-right: 2.6rem;
 }
 .Dropdown h4{
   padding: 10px;
 }
 
 .Sourcefield{
-  padding-left: 20%;
+  padding-left: 10rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -51,7 +49,7 @@
 }
 
 .Destinationfield{
-  padding-left: 20%;
+  padding-left: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,11 +57,13 @@
 .Destinationfield h3{
   padding: 10px;
 }
-.Box{
-  width: 342px;
+.TextBox{
+  width: 21.4rem;
 }
-
-#big-div{
+.Button{
+  margin-left: 10rem;
+}
+#fields{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
