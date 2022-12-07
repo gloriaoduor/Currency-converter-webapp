@@ -1,20 +1,28 @@
-// import {useEffect, useState} from 'react';
+import {  useState} from 'react';
 import Axios from 'axios';
 import './App.css';
 import ReactDropdown from 'react-dropdown';
+import { useEffect } from 'react';
+import { format } from "date-fns";
 
 function App() {
 
-  // const [source, setSource] = useState (" ");
-  // const [currOptions, setCurrOptions] = useState (" ");
+  const [source, setSource] = useState ("usd");
+  const [currOptions, setCurrOptions] = useState (" ");
   // const [data, setData] = useState ("");
 
-   // Calling the api to fetch source currency
-  const getData = async () =>{
-    const info = await Axios.get(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json`);
-    console.log(info.data)
-  };
-  getData();
+   // Calling the api to fetch all currencies
+  useEffect(() => {
+    Axios.get(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json`)
+      .then((res) => 
+        {setCurrOptions(res.data);}
+      )}, [source]); 
+
+  console.log((currOptions))
+  // useEffect(() => {
+  //   setCurrOptions(Object.keys(currOptions));
+  //       // convert();
+  //     }, [currOptions])
 
 
 
@@ -22,6 +30,7 @@ function App() {
 
   return (
    <div className='App pt-32'>
+     <h1>{format(new Date(), "MMMM do yyyy, h:mm:ss a")}</h1>
     <div className='Container bg-sky-100 border-4 rounded-md p-6'>
     <div className='Heading '>
       <h1 className='font-mono text-7xl p-3 m-2'>Currency Unit Converter</h1>
@@ -30,20 +39,20 @@ function App() {
     <div className='Body'>
       <div className='Main'>
       <div className='Options grid grid-cols-2 gap-4'>
-
-        <div  className='Dropdown outline outline-2 rounded '>
-          <h4>From:</h4>
-          <ReactDropdown 
-          // options={options}
+      <h4>From:</h4>
+        <div  className='Dropdown outline outline-2 rounded p-2'>
+          
+          <ReactDropdown className='drop'
+            options={Object.values(currOptions)}
                         // onChange = { (e) => setSource(e.value)}
                         // value={source} 
                          />
         </div>
-
-        <div className='Dropdown outline outline-2 rounded'>
-          <h4>To:</h4>
-          <ReactDropdown
-          //  options={options}
+        <h4>To:</h4>
+        <div className='Dropdown outline outline-2 rounded p-2'>
+          
+          <ReactDropdown className='drop'
+           options={Object.values(currOptions)}
                         // onChange = {(e) => {setdestinationCurrency(e.value)}}
                         // value={destinationCurrency}
                         />
