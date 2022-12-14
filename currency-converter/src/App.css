@@ -16,14 +16,14 @@
   align-items: center;
 }
 
-.Main {
+/* .Main {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .Options{
   height: 100px;
-  width: 800px;
+  width: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,8 +31,6 @@
 .Dropdown{
   display: flex;
   align-items: center;
-  padding-right: 2.6rem;
-  margin-right: 2.6rem;
 }
 .Dropdown h4{
   padding: 10px;
