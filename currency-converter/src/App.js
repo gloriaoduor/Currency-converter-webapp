@@ -10,7 +10,8 @@ function App() {
   const [destination, setDestination] = useState ("");
   const [currOptions, setCurrOptions] = useState ("");
   const [input, setInput] = useState("");
-  const [total, setTotal] =useState("")
+  const [total, setTotal] =useState("");
+  var rate = currOptions[destination]
   
 
   //fetch all currencies
@@ -19,20 +20,13 @@ function App() {
       .then((response) => setCurrOptions(response.data[source])
       )}, [source]); 
     // console.log(currOptions[destination])
-    
-
-  //to get the  conversion rate, append the source/destination currency to the url then .json
 
   //map the object into an array of values/indexes to display in the selection list
   const options = Object.keys(currOptions).map((value, index)=>
       <option key={index}>
-        {value}
+        {value} {/* value is each of the names of the currencies available */}
       </option>
-    );
-  
-  //extract rate 
-  var rate = currOptions[destination]
-  // console.log(rate)
+  );
 
   const handleSourceChange = (e) => {
     setSource(e.target.value)
@@ -40,13 +34,11 @@ function App() {
   const handleDestChange = (e) => {
     setDestination(e.target.value)
   }
-  
-  // console.log(source + " " + destination)
 
   //fxn to convert
   function convert(){
     setTotal(input * rate)
-    console.log(total);
+    console.log(total); 
   }
  
 
@@ -102,9 +94,6 @@ function App() {
               <button className='Button p-2 mt-4 rounded bg-orange-200 hover:bg-orange-400 outline outline-2 outline-orange-300'
                 onClick={convert}
               > Convert</button>
-
-
-              
 
             </div>
         </div>
